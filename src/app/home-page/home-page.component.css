@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 300%;
+    margin: auto;
+    padding: 10px;
+}
+
+.center-div {
+    width: 30%;
+    height: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.search-bar-nav {
+    text-align: center;
+}
+
+.search-input {
+    width: 100%;
+    height: 40px;
+}
