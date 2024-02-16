@@ -6,6 +6,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes:Routes = [
   {path:'about-us', component:AboutUsComponent},
@@ -16,7 +17,8 @@ const routes:Routes = [
   declarations: [
     AppComponent,
     AboutUsComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    NavbarComponent
   ],
   exports:[RouterModule],
   imports: [

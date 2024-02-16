@@ -1,0 +1,33 @@
+.logo {
+    float : left;
+}
+
+.search-bar-nav {
+    float : right;
+    margin-top: 25px;
+    margin-right: 200px;
+}
+
+input {
+    height:50px;
+}
+
+.search-input{
+    width: 200%;
+}
+
+.title {
+    float: left;
+}
+
+img {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 80px;
+}
+
+nav {
+    height: 100px;
+    background: linear-gradient(to right, blueviolet, 70%, #235dfc);
+}
+
