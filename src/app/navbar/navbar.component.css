@@ -3,9 +3,10 @@
 }
 
 .search-bar-nav {
+    width: 15%;
     float : right;
     margin-top: 25px;
-    margin-right: 200px;
+    margin-right: 100px;
 }
 
 input {
@@ -36,5 +37,4 @@ h1 {
     color: white;
     font-family: fantasy;
     font-size: 200%;
-
 }
