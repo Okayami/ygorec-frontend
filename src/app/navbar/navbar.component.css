@@ -18,6 +18,7 @@ input {
 
 .title {
     float: left;
+    margin-left: 15px;
 }
 
 img {
@@ -31,3 +32,9 @@ nav {
     background: linear-gradient(to right, blueviolet, 70%, #235dfc);
 }
 
+h1 {
+    color: white;
+    font-family: fantasy;
+    font-size: 200%;
+
+}
