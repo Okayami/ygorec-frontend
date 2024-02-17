@@ -11,10 +11,12 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule} from '@angular/material/select';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 
 const routes:Routes = [
-  {path:'', component:HomePageComponent}
+  {path:'', component:HomePageComponent},
+  {path:'card-detail', component:CardDetailComponent}
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const routes:Routes = [
     AppComponent,
     NavbarComponent,
     HomePageComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CardDetailComponent
   ],
   exports:[RouterModule],
   imports: [

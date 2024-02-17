@@ -1,4 +1,5 @@
 export interface Card {
     Name : string,
-    Type : string
+    Type : string,
+    Image : string
 }
