@@ -2,4 +2,12 @@ p {
     color: white; 
     margin: auto;
     padding: 10px;
+    font-family: 'Raleway';
+}
+
+h1 {
+    color: white; 
+    margin: auto;
+    padding: 10px;
+    font-family: 'Raleway_Italic';
 }
