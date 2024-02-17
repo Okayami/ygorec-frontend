@@ -13,12 +13,6 @@ export class SearchBarComponent  {
   constructor(private router: Router, private readonly selectedCardService: SelectedCardService) {
     
   }
-  public selectedCard : Card = {
-    Name: "Error",
-    Type: "Error",
-    Image: "Error"
-
-  }
 
   keyword = 'name';
   public cards = [
@@ -34,12 +28,6 @@ export class SearchBarComponent  {
   ];
 
     selectEvent(item: any) {
-      this.selectedCard = {
-        Name: item.name,
-        Type: "Magic",
-        Image: "https://images.ygoprodeck.com/images/cards/83764719.jpg"
-      }
-      this.selectedCardService.updateSelectedCard(this.selectedCard);
-      this.router.navigate(['/', 'card-detail']);
+      this.router.navigate(['/card-detail/', item.name.replaceAll(" ", "-")]);
   }
 }

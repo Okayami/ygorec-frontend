@@ -16,7 +16,10 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
 
 const routes:Routes = [
   {path:'', component:HomePageComponent},
-  {path:'card-detail', component:CardDetailComponent}
+  {path:'card-detail', component:CardDetailComponent, children: [
+    { path: ':name', component: CardDetailComponent },
+
+  ]}
 ];
 
 @NgModule({
