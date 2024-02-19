@@ -1,8 +1,7 @@
 <div>
-    <h1>{{ selectedCard.Name }}</h1>
+    <h1>{{ cards[0].Label }}</h1>
 </div>
-
-<img class="mainCard" [src]=selectedCard.Image>
+<img class="mainCard" [src]=cards[0].Url>
 <div class="div-type">
     <p class="type"><strong>Type :</strong> <img class="symbol" src="assets/spell_symbol.png"></p>
     <p class="extension"><strong>Extension :</strong> Metal Raiders</p>

@@ -1,5 +1,5 @@
 export interface Card {
-    Name : string,
-    Type : string,
-    Image : string
+    ID: number,
+    Label: string,
+    Url: string
 }
