@@ -26,7 +26,6 @@ export class SearchBarComponent implements OnInit {
       this.cardService.get(item).subscribe((cards) => {
         this.cards = (cards.data);
       });
-      console.log(item);
     } else {
       this.cards = [];
     }
