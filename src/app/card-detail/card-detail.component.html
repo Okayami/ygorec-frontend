@@ -3,9 +3,13 @@
 </div>
 <img class="mainCard" [src]=selectedCard.Image>
 <div class="div-type">
-    <p class="type"><strong>Type :</strong> <img class="symbol" src="assets/spell_symbol.png"></p>
-    <p class="extension"><strong>Extension :</strong> Metal Raiders</p>
-    <p class="legality"><strong>Legality :</strong> <img class="symbol" src="assets/limited.png"></p>
-    <p class="popularity"><strong>Popularity :</strong> 0.5% of all Decks</p>
-    <p class="price"><strong>Price :</strong> 12$</p>
+    <p class="type"><strong>Attribut :</strong> <img class="symbol" [src]=this.selectedCard.Symbol></p>
+    <p class="description"><strong>Description :</strong> {{ selectedCard.Desc }}</p>
+    <div *ngIf="selectedCard.Types[0] != 'Monster'; else elseBlock">
+    </div>
+    <ng-template #elseBlock>
+        <p class="attack"><strong>Attack :</strong> {{ selectedCard.Atk }}</p>
+        <p class="defense"><strong>Defense :</strong> {{ selectedCard.Def }}</p>
+        <p class="race"><strong>Race :</strong> {{ selectedCard.Race }}</p>
+    </ng-template>
 </div>
