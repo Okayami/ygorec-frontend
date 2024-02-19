@@ -22,7 +22,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onChangeSearch(item: string) {
-    if (item.length > 3) {
+    if (item.length > 2) {
       this.cardService.get(item.toLocaleLowerCase()).subscribe((cards) => {
         this.cards = (cards.data);
       });
