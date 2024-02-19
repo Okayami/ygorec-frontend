@@ -11,8 +11,8 @@ import { APIResponse } from "../model/api-reponse.model";
     private baseUrl = 'https://ygorec.up.railway.app/api';
     constructor(private http: HttpClient) {}
 
-    get(): Observable<APIResponse> {
-        return this.http.get<APIResponse>(this.baseUrl + `/typeahead`);
+    get(cardName: string): Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/typeahead?q=` + cardName);
     }
 
     getWithId(cardId: number): Observable<APIResponse> {

@@ -15,13 +15,20 @@ export class SearchBarComponent implements OnInit {
   public cards: CardMini[] = [];
   keyword = 'Label';
 
-  ngOnInit(): void {
-    this.cardService.get().subscribe((cards) => {
-      this.cards = (cards.data);
-    });
-  }
+  ngOnInit(): void {}
 
   selectEvent(item: any) {
     this.router.navigate(['/card-detail/', item.ID]);
+  }
+
+  onChangeSearch(item: string) {
+    if (item.length > 3) {
+      this.cardService.get(item).subscribe((cards) => {
+        this.cards = (cards.data);
+      });
+      console.log(item);
+    } else {
+      this.cards = [];
+    }
   }
 }
