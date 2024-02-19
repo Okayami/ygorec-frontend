@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from 'src/shared/model/card.model';
-import { CardService } from 'src/shared/service/card.service';
+import { CardMini } from 'src/shared/model/card-mini.model';
 
 @Component({
   selector: 'app-home-page',
@@ -8,7 +7,6 @@ import { CardService } from 'src/shared/service/card.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  public banger : Card[] = [];
   constructor() { }
 
   ngOnInit(): void {

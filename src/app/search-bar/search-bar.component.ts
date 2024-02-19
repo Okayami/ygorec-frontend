@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Card } from 'src/shared/model/card.model';
+import { CardMini } from 'src/shared/model/card-mini.model';
 import { CardService } from 'src/shared/service/card.service';
 
 @Component({
@@ -8,26 +8,20 @@ import { CardService } from 'src/shared/service/card.service';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent  {
+export class SearchBarComponent implements OnInit {
 
-  constructor(private router: Router, private readonly cardService: CardService) {
-    
+  constructor(private router: Router, private readonly cardService: CardService) { }
+
+  public cards: CardMini[] = [];
+  keyword = 'Label';
+
+  ngOnInit(): void {
+    this.cardService.get().subscribe((cards) => {
+      this.cards = (cards.data);
+    });
   }
 
-  keyword = 'name';
-  public cards = [
-    {
-      name: 'Insecte Mangeur d Homme',
-    },
-    {
-      name: 'Monster Reborn',
-    },
-    {
-      name: 'Trappe',
-    }
-  ];
-
-    selectEvent(item: any) {
-      this.router.navigate(['/card-detail/', item.name.replaceAll(" ", "-")]);
+  selectEvent(item: any) {
+    this.router.navigate(['/card-detail/', item.ID]);
   }
 }
