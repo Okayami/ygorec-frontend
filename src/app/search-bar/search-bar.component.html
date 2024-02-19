@@ -4,6 +4,7 @@
       [data]="cards"
       [searchKeyword]="keyword"
       placeHolder="Enter the Country Name"
+      (inputChanged)='onChangeSearch($event)'
       (selected)='selectEvent($event)'
       historyIdentifier="countries"
       [itemTemplate]="itemTemplate"
