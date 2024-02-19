@@ -3,6 +3,7 @@ p {
     margin: auto;
     padding: 10px;
     font-family: 'Raleway';
+    font-size: 150%;
 }
 
 h1 {
@@ -10,4 +11,19 @@ h1 {
     margin: auto;
     padding: 10px;
     font-family: 'Raleway_Italic';
+}
+
+.mainCard {
+    height: 500px;
+    float: left;
+}
+
+.div-type {
+    padding-left :400px;
+    
+}
+
+.symbol {
+    padding-left: 10px;
+    height: 30px;
 }

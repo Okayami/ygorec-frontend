@@ -1,6 +1,12 @@
 <div>
-<h1>Name :  {{ selectedCard.Name }}</h1>
-<p>Type :  {{ selectedCard.Type }}</p>
+    <h1>{{ selectedCard.Name }}</h1>
 </div>
 
-<img [src]=selectedCard.Image>
+<img class="mainCard" [src]=selectedCard.Image>
+<div class="div-type">
+    <p class="type"><strong>Type :</strong> <img class="symbol" src="assets/spell_symbol.png"></p>
+    <p class="extension"><strong>Extension :</strong> Metal Raiders</p>
+    <p class="legality"><strong>Legality :</strong> <img class="symbol" src="assets/limited.png"></p>
+    <p class="popularity"><strong>Popularity :</strong> 0.5% of all Decks</p>
+    <p class="price"><strong>Price :</strong> 12$</p>
+</div>
