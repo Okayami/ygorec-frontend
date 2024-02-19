@@ -12,18 +12,23 @@ import { CardService } from 'src/shared/service/card.service';
 export class CardDetailComponent implements OnInit {
 
   public currentURL: string = "";
-  public cardName : string = "";
-  public cards : Card[] = [];
+  public cardId : number = 0;
+  public selectedCard : Card = {
+    ID: 12,
+    Name: "",
+    Desc: "",
+    Attribute: "",
+    Image: ""
+}
 
   constructor(private readonly cardService: CardService, private router: ActivatedRoute,) {}
   ngOnInit(): void {
-    this.cardService.getSelectedCard().subscribe((cards) => {
-      this.cards = (cards.data);
-      this.cards[0].Url = "https://images.ygoprodeck.com/images" + this.cards[0].Url + ".jpg";
+    this.currentURL = window.location.href;
+    this.cardId = Number(this.currentURL.substring(this.currentURL.lastIndexOf("/") + 1, this.currentURL.length));
+    this.cardService.getWithId(this.cardId).subscribe((card) => {
+      this.selectedCard = card.data;
+      this.selectedCard.Image = "https://images.ygoprodeck.com/images/cards/" + this.cardId + ".jpg";
     });
     
-    this.currentURL = window.location.href;
-    this.cardName = this.currentURL.substring(this.currentURL.lastIndexOf("/") + 1, this.currentURL.length);
-    this.cardName = this.cardName.replace(/-/g, " ");
   }
 }
