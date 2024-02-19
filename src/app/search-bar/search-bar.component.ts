@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Card } from 'src/shared/model/card.model';
-import { SelectedCardService } from 'src/shared/service/selected-card.service';
+import { CardService } from 'src/shared/service/card.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,7 +10,7 @@ import { SelectedCardService } from 'src/shared/service/selected-card.service';
 })
 export class SearchBarComponent  {
 
-  constructor(private router: Router, private readonly selectedCardService: SelectedCardService) {
+  constructor(private router: Router, private readonly cardService: CardService) {
     
   }
 
