@@ -12,11 +12,15 @@ import { MatSelectModule} from '@angular/material/select';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 const routes:Routes = [
   {path:'', component:HomePageComponent},
-  {path:'card-detail', component:CardDetailComponent}
+  {path:'card-detail', component:CardDetailComponent, children: [
+    { path: ':name', component: CardDetailComponent },
+
+  ]}
 ];
 
 @NgModule({
@@ -34,7 +38,8 @@ const routes:Routes = [
     FormsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

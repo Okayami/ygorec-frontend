@@ -4,6 +4,7 @@
       [data]="cards"
       [searchKeyword]="keyword"
       placeHolder="Enter the Country Name"
+      (inputChanged)='onChangeSearch($event)'
       (selected)='selectEvent($event)'
       historyIdentifier="countries"
       [itemTemplate]="itemTemplate"
@@ -11,7 +12,7 @@
     </ng-autocomplete>
   
     <ng-template #itemTemplate let-item>
-      <a [innerHTML]="item.name"></a>
+      <a [innerHTML]="item.Label"></a>
     </ng-template>
   
     <ng-template #notFoundTemplate let-notFound>

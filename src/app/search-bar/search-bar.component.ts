@@ -1,45 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Card } from 'src/shared/model/card.model';
-import { SelectedCardService } from 'src/shared/service/selected-card.service';
+import { CardMini } from 'src/shared/model/card-mini.model';
+import { CardService } from 'src/shared/service/card.service';
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent  {
+export class SearchBarComponent implements OnInit {
 
-  constructor(private router: Router, private readonly selectedCardService: SelectedCardService) {
-    
+  constructor(private router: Router, private readonly cardService: CardService) { }
+
+  public cards: CardMini[] = [];
+  keyword = 'Label';
+
+  ngOnInit(): void {}
+
+  selectEvent(item: any) {
+    this.router.navigate(['/card-detail/', item.ID]);
   }
-  public selectedCard : Card = {
-    Name: "Error",
-    Type: "Error",
-    Image: "Error"
 
-  }
-
-  keyword = 'name';
-  public cards = [
-    {
-      name: 'Insecte Mangeur d Homme',
-    },
-    {
-      name: 'Monster Reborn',
-    },
-    {
-      name: 'Trappe',
+  onChangeSearch(item: string) {
+    if (item.length > 2) {
+      this.cardService.get(item.toLocaleLowerCase()).subscribe((cards) => {
+        this.cards = (cards.data);
+      });
+    } else {
+      this.cards = [];
     }
-  ];
-
-    selectEvent(item: any) {
-      this.selectedCard = {
-        Name: item.name,
-        Type: "Magic",
-        Image: "https://images.ygoprodeck.com/images/cards/83764719.jpg"
-      }
-      this.selectedCardService.updateSelectedCard(this.selectedCard);
-      this.router.navigate(['/', 'card-detail']);
   }
 }

@@ -1,6 +1,15 @@
 <div>
-<p>Name :  {{ selectedCard.Name }}</p>
-<p>Type :  {{ selectedCard.Type }}</p>
+    <h1>{{ selectedCard.Name }}</h1>
 </div>
-
-<img [src]=selectedCard.Image>
+<img class="mainCard" [src]=selectedCard.Image>
+<div class="div-type">
+    <p class="type"><strong>Attribut :</strong> <img class="symbol" [src]=this.selectedCard.Symbol></p>
+    <p class="description"><strong>Description :</strong> {{ selectedCard.Desc }}</p>
+    <div *ngIf="selectedCard.Types[0] != 'Monster'; else elseBlock">
+    </div>
+    <ng-template #elseBlock>
+        <p class="attack"><strong>Attack :</strong> {{ selectedCard.Atk }}</p>
+        <p class="defense"><strong>Defense :</strong> {{ selectedCard.Def }}</p>
+        <p class="race"><strong>Race :</strong> {{ selectedCard.Race }}</p>
+    </ng-template>
+</div>

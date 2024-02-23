@@ -1,5 +1,12 @@
 export interface Card {
-    Name : string,
-    Type : string,
-    Image : string
+    ID: number,
+    Name: string,
+    Desc: string,
+    Attribute: string
+    Race: string
+    Atk: string
+    Def: string
+    Types: string[]
+    Image: string
+    Symbol: string
 }

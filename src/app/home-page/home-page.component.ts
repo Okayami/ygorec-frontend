@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from 'src/shared/model/card.model';
+import { CardMini } from 'src/shared/model/card-mini.model';
 
 @Component({
   selector: 'app-home-page',
