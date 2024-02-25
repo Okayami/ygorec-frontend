@@ -6,6 +6,7 @@
     <ng-template ngFor let-card [ngForOf]="topCards">
         <div (click)="goToCard(card)" class="divCard">
             <img class="img" src="https://images.ygoprodeck.com/images{{card.Url}}.jpg">
+            <p>{{card.Percentage | number : '1.2-2'}}% of all Decks<br>{{card.Average | number : '1.2-2'}} copy per Deck</p>
         </div>
     </ng-template>
 </div>

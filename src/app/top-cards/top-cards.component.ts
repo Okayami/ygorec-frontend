@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CardMini } from 'src/shared/model/card-mini.model';
+import { CardList } from 'src/shared/model/card-list';
 import { Card } from 'src/shared/model/card.model';
 import { CardService } from 'src/shared/service/card.service';
 
@@ -11,7 +11,7 @@ import { CardService } from 'src/shared/service/card.service';
 })
 export class TopCardsComponent implements OnInit {
 
-  public topCards: CardMini[] = [];
+  public topCards: CardList[] = [];
   public limit: number = 30;
   public offset: number = 0;
   constructor(private readonly cardService: CardService, private router: Router) { }
@@ -22,7 +22,7 @@ export class TopCardsComponent implements OnInit {
     })
   }
 
-  goToCard(item: CardMini): void {
+  goToCard(item: CardList): void {
     this.router.navigate(['/card-detail/', item.ID]);
   }
 

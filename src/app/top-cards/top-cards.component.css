@@ -14,13 +14,14 @@ p {
 h1 {
     color: white; 
     margin: auto;
-    padding: 10px;
+    padding: 20px;
     font-family: 'Raleway_Italic';
+    font-size: 300%;
 }
 
 .divCard {
     float : left;
-    padding: 1%;
+    padding-left: 1%;
 }
 
 .buttonText {
@@ -29,5 +30,4 @@ h1 {
 }
 
 .loadMore {
-    padding: 50px;
 }
