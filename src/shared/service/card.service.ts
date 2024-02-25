@@ -19,7 +19,7 @@ import { APIResponse } from "../model/api-reponse.model";
         return this.http.get<APIResponse>(this.baseUrl + `/cards/` + cardId);
     }
 
-    getTopCards(limit : number) : Observable<APIResponse> {
-        return this.http.get<APIResponse>(this.baseUrl + `/cards?limit=` + limit + `&`);
+    getTopCards(limit : number, offset : number) : Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/cards?limit=` + limit + `&offset=` + offset);
     }
  }

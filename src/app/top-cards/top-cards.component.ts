@@ -11,12 +11,13 @@ import { CardService } from 'src/shared/service/card.service';
 })
 export class TopCardsComponent implements OnInit {
 
-  public topCards : CardMini[] = [];
-  public limit : number = 30;
+  public topCards: CardMini[] = [];
+  public limit: number = 30;
+  public offset: number = 0;
   constructor(private readonly cardService: CardService, private router: Router) { }
 
   ngOnInit(): void {
-    this.cardService.getTopCards(this.limit).subscribe((reponse) => {
+    this.cardService.getTopCards(this.limit, this.offset).subscribe((reponse) => {
       this.topCards = reponse.data;
     })
   }
@@ -26,9 +27,11 @@ export class TopCardsComponent implements OnInit {
   }
 
   loadMore(): void {
-    this.limit = this.limit + 30;
-    this.cardService.getTopCards(this.limit).subscribe((reponse) => {
-      this.topCards = reponse.data;
+    this.offset = this.offset + 30;
+    this.cardService.getTopCards(this.limit, this.offset).subscribe((reponse) => {
+      reponse.data.forEach((currentValue: Card, index: number) => {
+        this.topCards.push(reponse.data[index]);
+      });
     })
   }
 
