@@ -18,4 +18,8 @@ import { APIResponse } from "../model/api-reponse.model";
     getWithId(cardId: number): Observable<APIResponse> {
         return this.http.get<APIResponse>(this.baseUrl + `/cards/` + cardId);
     }
+
+    getTopCards() : Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/cards/`);
+    }
  }

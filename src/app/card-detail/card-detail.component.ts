@@ -26,7 +26,7 @@ export class CardDetailComponent implements OnInit {
     Symbol: ""
   }
 
-  constructor(private readonly cardService: CardService, private router: ActivatedRoute,) { }
+  constructor(private readonly cardService: CardService, private router: ActivatedRoute) { }
   ngOnInit(): void {
     this.currentURL = window.location.href;
     this.cardId = Number(this.currentURL.substring(this.currentURL.lastIndexOf("/") + 1, this.currentURL.length));

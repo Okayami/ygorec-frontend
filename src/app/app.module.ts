@@ -13,14 +13,15 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TopCardsComponent } from './top-cards/top-cards.component';
 
 
 const routes:Routes = [
   {path:'', component:HomePageComponent},
   {path:'card-detail', component:CardDetailComponent, children: [
     { path: ':name', component: CardDetailComponent },
-
-  ]}
+  ]},
+  {path:'top-cards', component:TopCardsComponent}
 ];
 
 @NgModule({
@@ -29,7 +30,8 @@ const routes:Routes = [
     NavbarComponent,
     HomePageComponent,
     SearchBarComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    TopCardsComponent
   ],
   exports:[RouterModule],
   imports: [
