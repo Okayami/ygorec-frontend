@@ -1,0 +1,33 @@
+.img {
+    height: 400px;
+}
+
+p {
+    color: white; 
+    margin: auto;
+    padding: 10px;
+    font-family: 'Raleway';
+    font-size: 90%;
+    word-break: break-all;
+}
+
+h1 {
+    color: white; 
+    margin: auto;
+    padding: 10px;
+    font-family: 'Raleway_Italic';
+}
+
+.divCard {
+    float : left;
+    padding: 1%;
+}
+
+.buttonText {
+    font-size: 200%;
+    color: black; 
+}
+
+.loadMore {
+    padding: 50px;
+}
