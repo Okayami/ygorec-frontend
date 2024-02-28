@@ -3,6 +3,11 @@
 </div>
 
 <div>
+    <button (click)="activateBanList(0)">All</button>
+    <button (click)="activateBanList(1)">BanList</button>
+</div>
+
+<div>
     <ng-template ngFor let-card [ngForOf]="topCards">
         <div (click)="goToCard(card)" class="divCard">
             <img class="img" src="https://images.ygoprodeck.com/images{{card.Url}}.jpg">
