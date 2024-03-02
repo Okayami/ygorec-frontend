@@ -38,3 +38,11 @@ h1 {
     font-family: Raleway;
     font-size: 200%;
 }
+
+.options {
+    color: white;
+    float: left;
+    margin-left: 5%;
+    font-family: Raleway;
+    font-size: 150%;
+}

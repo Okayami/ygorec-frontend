@@ -1,0 +1,23 @@
+<div>
+    <h1>Top Cards</h1>
+</div>
+
+<div>
+    <button (click)="activateBanList(0)">All</button>
+    <button (click)="activateBanList(1)">BanList</button>
+</div>
+
+<div>
+    <ng-template ngFor let-card [ngForOf]="topCards">
+        <div (click)="goToCard(card)" class="divCard">
+            <img class="img" src="https://images.ygoprodeck.com/images{{card.Url}}.jpg">
+            <p>{{ card.Amount / totalDeck * 100 | number : '1.2-2'}}% of all Decks<br>{{card.Average | number : '1.2-2'}} copy per Deck</p>
+        </div>
+    </ng-template>
+</div>
+
+<div class="loadMore">
+    <button (click)="loadMore()">
+        <p class="buttonText">Load More</p>
+    </button>
+</div>
