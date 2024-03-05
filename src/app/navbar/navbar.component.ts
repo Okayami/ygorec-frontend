@@ -20,4 +20,8 @@ export class NavbarComponent implements OnInit {
   goHome() : void {
     this.router.navigate(['']);
   }
+
+  goArchetypes(): void {
+    this.router.navigate(['/archetypes/']);
+  }
 }

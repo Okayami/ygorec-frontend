@@ -1,0 +1,12 @@
+<div>
+    <h1>Archetypes</h1>
+</div>
+
+<div>
+    <ng-template ngFor let-archetype [ngForOf]="archetypes">
+        <div class="divArchetype">
+            <img class="img" src="https://images.ygoprodeck.com/images/cards/{{archetype.MostUsedCardID}}.jpg">
+            <p>{{ archetype.Label }}</p>
+        </div>
+    </ng-template>
+</div>

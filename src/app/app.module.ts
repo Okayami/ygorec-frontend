@@ -14,6 +14,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopCardsComponent } from './top-cards/top-cards.component';
+import { ArchetypeComponent } from './archetype/archetype.component';
 
 
 const routes:Routes = [
@@ -21,7 +22,8 @@ const routes:Routes = [
   {path:'card-detail', component:CardDetailComponent, children: [
     { path: ':name', component: CardDetailComponent },
   ]},
-  {path:'top-cards', component:TopCardsComponent}
+  {path:'top-cards', component:TopCardsComponent},
+  {path:'archetypes', component:ArchetypeComponent},
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const routes:Routes = [
     HomePageComponent,
     SearchBarComponent,
     CardDetailComponent,
-    TopCardsComponent
+    TopCardsComponent,
+    ArchetypeComponent
   ],
   exports:[RouterModule],
   imports: [
