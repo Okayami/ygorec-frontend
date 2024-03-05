@@ -23,7 +23,8 @@ export class CardDetailComponent implements OnInit {
     Def: "",
     Types: [],
     Image: "",
-    Symbol: ""
+    Symbol: "",
+    Limitation: 0
   }
 
   constructor(private readonly cardService: CardService, private router: ActivatedRoute) { }
