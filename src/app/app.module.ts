@@ -50,3 +50,5 @@ const routes:Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//ng build --output-path docs --base-href /ygorec-frontend/
