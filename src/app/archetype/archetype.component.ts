@@ -22,4 +22,12 @@ export class ArchetypeComponent implements OnInit {
     })
   }
 
+  loadMore(): void {
+    this.offset = this.offset + 30;
+    this.cardService.getArchetypes(this.limit, this.offset).subscribe((reponse) => {
+      reponse.data.List.forEach((currentValue: Archetypes, index: number) => {
+        this.archetypes.push(reponse.data.List[index]);
+      });
+    })
+  }
 }

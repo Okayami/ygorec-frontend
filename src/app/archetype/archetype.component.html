@@ -6,7 +6,12 @@
     <ng-template ngFor let-archetype [ngForOf]="archetypes">
         <div class="divArchetype">
             <img class="img" src="https://images.ygoprodeck.com/images/cards/{{archetype.MostUsedCardID}}.jpg">
-            <p>{{ archetype.Label }}</p>
+            <p>{{ archetype.Label }}<br>{{ archetype.DeckAmount }} decks</p>
         </div>
     </ng-template>
+</div>
+<div class="loadMore">
+    <button (click)="loadMore()">
+        <p class="buttonText">Load More</p>
+    </button>
 </div>

@@ -23,3 +23,8 @@ p {
     float : left;
     padding-left: 1%;
 }
+
+.buttonText {
+    font-size: 200%;
+    color: black; 
+}
