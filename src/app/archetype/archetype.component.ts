@@ -10,7 +10,7 @@ import { CardService } from 'src/shared/service/card.service';
 })
 export class ArchetypeComponent implements OnInit {
 
-  public limit: number = 30;
+  public limit: number = 20;
   public offset: number = 0;
   public archetypes: Archetypes[] = [];
 
@@ -23,10 +23,10 @@ export class ArchetypeComponent implements OnInit {
   }
 
   loadMore(): void {
-    this.offset = this.offset + 30;
+    this.offset = this.offset + 20;
     this.cardService.getArchetypes(this.limit, this.offset).subscribe((reponse) => {
-      reponse.data.List.forEach((currentValue: Archetypes, index: number) => {
-        this.archetypes.push(reponse.data.List[index]);
+      reponse.data.forEach((currentValue: Archetypes, index: number) => {
+        this.archetypes.push(reponse.data[index]);
       });
     })
   }

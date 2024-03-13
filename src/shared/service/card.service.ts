@@ -27,6 +27,6 @@ export class CardService {
     }
 
     getArchetypes(limit: number, offset: number): Observable<APIResponse> {
-        return this.http.get<APIResponse>(this.baseUrl + `/archetypes?limit=50&offset=50`);
+        return this.http.get<APIResponse>(this.baseUrl + `/archetypes?limit=` + limit + `&offset=` + offset);
     }
 }
