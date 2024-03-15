@@ -1,0 +1,17 @@
+<div>
+    <h1>Archetypes</h1>
+</div>
+
+<div class="content">
+    <ng-template ngFor let-archetype [ngForOf]="archetypes">
+        <div (click)="goToCard(archetype)" class="divArchetype">
+            <img class="img" src="https://images.ygoprodeck.com/images/cards_cropped/{{archetype.MostUsedCardID}}.jpg">
+            <p>{{ archetype.Label }}<br>{{ archetype.DeckAmount }} decks</p>
+        </div>
+    </ng-template>
+</div>
+<div class="loadMore">
+    <button (click)="loadMore()">
+        <p class="buttonText">Load More</p>
+    </button>
+</div>

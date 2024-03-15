@@ -1,5 +1,16 @@
-<div>
-    <h1>{{ selectedCard.Name }}</h1>
+<div class="div-header">
+    <div class="div-name">
+        <h1>{{ selectedCard.Name }}</h1>
+    </div>
+    <div class="div-limitation" *ngIf="selectedCard.Limitation == 0">
+        <img class="limitation" src="assets/Limitation/forbidden.png">
+    </div>
+    <div class="div-limitation" *ngIf="selectedCard.Limitation == 1">
+        <img class="limitation" src="assets/Limitation/limited.png">
+    </div>
+    <div class="div-limitation" *ngIf="selectedCard.Limitation == 2">
+        <img class="limitation" src="assets/Limitation/semi-limited.png">
+    </div>
 </div>
 <img class="mainCard" [src]=selectedCard.Image>
 <div class="div-type">

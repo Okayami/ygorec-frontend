@@ -14,6 +14,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopCardsComponent } from './top-cards/top-cards.component';
+import { ArchetypeComponent } from './archetype/archetype.component';
+import { ArchetypeDetailComponent } from './archetype-detail/archetype-detail.component';
 
 
 const routes:Routes = [
@@ -21,7 +23,11 @@ const routes:Routes = [
   {path:'card-detail', component:CardDetailComponent, children: [
     { path: ':name', component: CardDetailComponent },
   ]},
-  {path:'top-cards', component:TopCardsComponent}
+  {path:'top-cards', component:TopCardsComponent},
+  {path:'archetypes', component:ArchetypeComponent},
+  {path:'archetype-detail', component:ArchetypeDetailComponent, children: [
+    { path: ':name', component: ArchetypeDetailComponent },
+  ]}
 ];
 
 @NgModule({
@@ -31,7 +37,9 @@ const routes:Routes = [
     HomePageComponent,
     SearchBarComponent,
     CardDetailComponent,
-    TopCardsComponent
+    TopCardsComponent,
+    ArchetypeComponent,
+    ArchetypeDetailComponent
   ],
   exports:[RouterModule],
   imports: [
@@ -47,3 +55,5 @@ const routes:Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//ng build --output-path docs --base-href /ygorec-frontend/

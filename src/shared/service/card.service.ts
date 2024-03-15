@@ -25,4 +25,12 @@ export class CardService {
         }
         return this.http.get<APIResponse>(this.baseUrl + `/cards?limit=` + limit + `&offset=` + offset + '&banlist=2024-01-01');
     }
+
+    getArchetypes(limit: number, offset: number): Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/archetypes?limit=` + limit + `&offset=` + offset);
+    }
+
+    getArchetypeDetail(name: string): Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/archetypes/` + name);
+    }
 }

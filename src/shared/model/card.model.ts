@@ -9,4 +9,6 @@ export interface Card {
     Types: string[]
     Image: string
     Symbol: string
+    Limitation: number
+    Level: string
 }
