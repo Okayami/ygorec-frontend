@@ -3,6 +3,7 @@ export interface Archetypes {
     Label: string,
     DeckAmount: number,
     CardAmount: number,
-    MostUsedCardID: number
+    MostUsedCardID: number,
+    Url: string,
     Image: string
 }

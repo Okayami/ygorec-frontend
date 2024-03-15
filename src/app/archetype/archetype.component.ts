@@ -30,4 +30,9 @@ export class ArchetypeComponent implements OnInit {
       });
     })
   }
+
+  goToCard(item: Archetypes): void {
+    this.router.navigate(['/archetype-detail/', item.Url.substring(item.Url.lastIndexOf("/") + 1, item.Url.length)]);
+  }
+
 }
