@@ -24,3 +24,24 @@
         <p class="race"><strong>Race :</strong> {{ selectedCard.Race }}</p>
     </ng-template>
 </div>
+
+
+
+<div class="div-played-card">
+    <h2>Top Cards</h2>
+    <ng-template ngFor let-card [ngForOf]="playedCards">
+        <div (click)="goToCard(card)" class="divCard">
+            <div class="limitation-card" *ngIf="card.Limitation == 0">
+                <img class="limitation" src="assets/Limitation/forbidden.png">
+            </div>
+            <div class="limitation-card" *ngIf="card.Limitation == 1">
+                <img class="limitation" src="assets/Limitation/limited.png">
+            </div>
+            <div class="limitation-card" *ngIf="card.Limitation == 2">
+                <img class="limitation" src="assets/Limitation/semi-limited.png">
+            </div>
+            <img class="img" src="https://images.ygoprodeck.com/images{{card.Url}}.jpg">
+            <p class="card-info">{{ card.Amount / totalDeck * 100 | number : '1.2-2'}}% of all Decks<br>{{card.Average | number : '1.2-2'}} copy per Deck</p>
+        </div>
+    </ng-template>
+</div>

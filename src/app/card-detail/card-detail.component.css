@@ -11,6 +11,16 @@ h1 {
     margin: auto;
     padding: 10px;
     font-family: 'Raleway_Italic';
+    font-size: 300%;
+}
+
+h2 {
+    color: white;
+    margin: auto;
+    padding: 10px;
+    font-family: 'Raleway_Italic';
+    font-size: 200%;
+    padding-bottom: 20px;
 }
 
 .mainCard {
@@ -29,7 +39,7 @@ h1 {
 }
 
 .limitation {
-    padding-left: 10px;
+    padding-top: 10px;
     height: 50px;
 }
 
@@ -41,4 +51,34 @@ h1 {
 
 .div-limitation {
     margin-top: 5px;
+}
+
+.img {
+    height: 400px;
+}
+
+.divCard {
+    float : left;
+    padding-left: 2%;
+}
+
+.div-played-card {
+    position: relative;
+    float: left;
+    padding-top: 20px;
+}
+
+.card-info {
+    color: white; 
+    margin: auto;
+    padding: 10px;
+    font-family: 'Raleway';
+    font-size: 90%;
+    word-break: break-all;
+}
+
+.limitation-card {
+    padding-top: 340px;
+    height: 50px;
+    position: absolute;
 }

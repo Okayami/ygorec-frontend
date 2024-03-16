@@ -26,6 +26,10 @@ export class CardService {
         return this.http.get<APIResponse>(this.baseUrl + `/cards?limit=` + limit + `&offset=` + offset + '&banlist=2024-01-01');
     }
 
+    getPlayedCards(id: number): Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/cards?card_id=` + id);
+    }
+
     getArchetypes(limit: number, offset: number): Observable<APIResponse> {
         return this.http.get<APIResponse>(this.baseUrl + `/archetypes?limit=` + limit + `&offset=` + offset);
     }

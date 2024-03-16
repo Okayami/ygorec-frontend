@@ -3,5 +3,6 @@ export interface CardList {
     Label: string,
     Url: string,
     Amount: number,
-    Average: number
+    Average: number,
+    Limitation: number
 }
