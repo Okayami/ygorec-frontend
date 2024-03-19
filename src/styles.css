@@ -7,5 +7,5 @@ html { background-color: #3A3A3A; }
 
   @font-face {
     font-family: Raleway_Italic;
-    src: url("Raleway-Italic-VariableFont_wght.ttf")
+    src: url("./assets/Raleway-Italic-VariableFont_wght.ttf")
   }
