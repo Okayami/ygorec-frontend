@@ -35,5 +35,16 @@ h1 {
 }
 
 .divBanlist {
+    padding: 20px;
     padding-bottom: 2%;
+}
+
+.limitation {
+    padding-top: 350px;
+    height: 50px;
+    position: absolute;
+}
+
+.loadMore {
+    padding-left: 20px;
 }

@@ -17,11 +17,13 @@ p {
 
 .img {
     height: 400px;
+    aspect-ratio: auto 3/4;
 }
 
 .divArchetype {
     float : left;
-    padding-left: 3%;
+    width: 25%;
+    padding-left: 0%;
 }
 
 .buttonText {
@@ -29,6 +31,10 @@ p {
     color: black; 
 }
 
-.loadMore {
+.content {
+    padding-left: 2%;
 }
 
+.loadMore {
+    padding-left: 20px;
+}
