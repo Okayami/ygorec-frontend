@@ -14,7 +14,7 @@ export class ArchetypeDetailComponent implements OnInit {
   public archetypeName: string = "";
   public archetypeCards: ArchetypeCard[] = [];
   public otherCards: ArchetypeCard[] = [];
-  public totalDeck: Number = 0;
+  public totalDeck: number = 0;
   public archetypeLabel: string = "";
 
   constructor(private readonly cardService: CardService, private router: Router) { }
