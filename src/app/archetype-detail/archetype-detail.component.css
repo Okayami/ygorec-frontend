@@ -1,5 +1,6 @@
 .divCard {
     float : left;
+    width: 18%;
     padding-left: 2%;
 }
 
@@ -45,4 +46,9 @@ h3 {
     padding-top: 350px;
     height: 50px;
     position: absolute;
+}
+
+.divOtherCard {
+    padding-top: 10px;
+    float: left;
 }

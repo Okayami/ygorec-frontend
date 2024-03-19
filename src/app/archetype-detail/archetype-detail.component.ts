@@ -13,7 +13,9 @@ export class ArchetypeDetailComponent implements OnInit {
   public currentURL: string = "";
   public archetypeName: string = "";
   public archetypeCards: ArchetypeCard[] = [];
+  public otherCards: ArchetypeCard[] = [];
   public totalDeck: Number = 0;
+  public archetypeLabel: string = "";
 
   constructor(private readonly cardService: CardService, private router: Router) { }
 
@@ -23,6 +25,8 @@ export class ArchetypeDetailComponent implements OnInit {
     this.cardService.getArchetypeDetail(this.archetypeName).subscribe((reponse) => {
       this.totalDeck = Number(reponse.data.DeckAmount);
       this.archetypeCards = reponse.data.ArchetypeCards;
+      this.otherCards = reponse.data.OtherCards;
+      this.archetypeLabel = reponse.data.Label;
     })
   }
 

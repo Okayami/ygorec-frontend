@@ -1,5 +1,4 @@
-
-<h1>{{ archetypeName }}</h1>
+<h1>{{ archetypeLabel }}</h1>
 <h3>{{ totalDeck }} Decks</h3>
 
 <h2>Archetype Cards</h2>
@@ -19,4 +18,25 @@
             <p>In {{ card.Amount }} decks <br>{{card.Average | number : '1.2-2'}} copy per Deck </p>
         </div>
     </ng-template>
+</div>
+
+<div class="divOtherCard">
+    <h2>Played Cards</h2>
+    <div>
+        <ng-template ngFor let-card [ngForOf]="otherCards">
+            <div class="divCard" (click)="goToCard(card)">
+                <div class="div-limitation" *ngIf="card.Limitation == 0">
+                    <img class="limitation" src="assets/Limitation/forbidden.png">
+                </div>
+                <div class="div-limitation" *ngIf="card.Limitation == 1">
+                    <img class="limitation" src="assets/Limitation/limited.png">
+                </div>
+                <div class="div-limitation" *ngIf="card.Limitation == 2">
+                    <img class="limitation" src="assets/Limitation/semi-limited.png">
+                </div>
+                <img class="img" src="https://images.ygoprodeck.com/images{{card.Url}}.jpg">
+                <p>In {{ card.Amount }} decks <br>{{card.Average | number : '1.2-2'}} copy per Deck </p>
+            </div>
+        </ng-template>
+    </div>
 </div>
