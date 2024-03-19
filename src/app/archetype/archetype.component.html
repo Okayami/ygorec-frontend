@@ -2,6 +2,28 @@
     <h1>Archetypes</h1>
 </div>
 
+<div class="ng-autocomplete">
+    <ng-autocomplete
+      placeholder="Search Yu-Gi-Oh! Archetypes"
+      [data]="cards"
+      [searchKeyword]="keyword"
+      placeHolder="Enter the Country Name"
+      (inputChanged)='onChangeSearch($event)'
+      (selected)='selectEvent($event)'
+      historyIdentifier="countries"
+      [itemTemplate]="itemTemplate"
+      [notFoundTemplate]="notFoundTemplate">
+    </ng-autocomplete>
+  
+    <ng-template #itemTemplate let-item>
+      <a [innerHTML]="item.Label"></a>
+    </ng-template>
+  
+    <ng-template #notFoundTemplate let-notFound>
+      <div [innerHTML]="notFound"></div>
+    </ng-template>
+  </div>
+
 <div class="content">
     <ng-template ngFor let-archetype [ngForOf]="archetypes">
         <div (click)="goToCard(archetype)" class="divArchetype">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ArchetypeMini } from 'src/shared/model/archetype-mini.model';
 import { Archetypes } from 'src/shared/model/archetypes.model';
 import { CardService } from 'src/shared/service/card.service';
 
@@ -13,6 +14,9 @@ export class ArchetypeComponent implements OnInit {
   public limit: number = 20;
   public offset: number = 0;
   public archetypes: Archetypes[] = [];
+  public cards: ArchetypeMini[] = [];
+  keyword = 'Label';
+
 
   constructor(private readonly cardService: CardService, private router: Router) { }
 
@@ -33,6 +37,20 @@ export class ArchetypeComponent implements OnInit {
 
   goToCard(item: Archetypes): void {
     this.router.navigate(['/archetype-detail/', item.Url.substring(item.Url.lastIndexOf("/") + 1, item.Url.length)]);
+  }
+
+  selectEvent(item: any) {
+    this.router.navigate(['/archetype-detail/', item.Url.substring(item.Url.lastIndexOf("/") + 1, item.Url.length)]);
+  }
+
+  onChangeSearch(item: string) {
+    if (item.length > 2) {
+      this.cardService.searchArchetype(item.toLocaleLowerCase()).subscribe((cards) => {
+        this.cards = (cards.data);
+      });
+    } else {
+      this.cards = [];
+    }
   }
 
 }

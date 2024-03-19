@@ -37,4 +37,8 @@ export class CardService {
     getArchetypeDetail(name: string): Observable<APIResponse> {
         return this.http.get<APIResponse>(this.baseUrl + `/archetypes/` + name);
     }
+
+    searchArchetype(archetypeName: string): Observable<APIResponse> {
+        return this.http.get<APIResponse>(this.baseUrl + `/archetypes/typeahead?q=` + archetypeName);
+    }
 }
