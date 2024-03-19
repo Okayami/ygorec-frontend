@@ -21,13 +21,19 @@ h1 {
 
 .divCard {
     float : left;
+    width: 18%;
     padding-left: 2%;
 }
 
 .buttonText {
-    font-size: 200%;
+    font-size: 150%;
     color: black; 
 }
 
-.loadMore {
+.banlistButton {
+    width: 10%;
+}
+
+.divBanlist {
+    padding-bottom: 2%;
 }
